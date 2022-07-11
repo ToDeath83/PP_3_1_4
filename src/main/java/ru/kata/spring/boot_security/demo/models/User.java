@@ -34,7 +34,7 @@ public class User implements UserDetails {
     @Size(min = 2, max = 30, message = "Surname should be between 2 and 30 characters")
     private String surname;
     @Column(name = "age")
-    @Min(value = 0, message = "Age should be greater than 0")
+    @Min(value = 1, message = "Не меньше 1")
     private int age;
     @Size(min=2, message = "Не меньше 5 знаков")
     @Column(name = "username")

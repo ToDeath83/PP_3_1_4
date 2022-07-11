@@ -25,24 +25,4 @@ public class AdminController {
         model.addAttribute("userAdmin", userService.findByUsername(principal.getName()));
         return "admin";
     }
-
-//    @GetMapping("/admin/adminpage")
-//    public String users(ModelMap model, Principal principal) {
-//        model.addAttribute("users", userService.getUsers());
-//        model.addAttribute("roles", userService.listRoles());
-//        model.addAttribute("userAdmin", userService.findByUsername(principal.getName()));
-//        return "admin";
-//    }
-//
-//    @PostMapping("/admin/adminpage/actionsWithUser")
-//    public String update(@ModelAttribute("user") User user, @RequestParam("listRoles") long[] role_id) {
-//        userService.saveUser(user, role_id);
-//        return "redirect:/admin/adminpage";
-//    }
-//
-//    @PostMapping("/admin/adminpage/delete/{id}")
-//    public String removeUser(@PathVariable Long id) {
-//        userService.deleteUser(userService.readUser(id));
-//        return "redirect:/admin/adminpage";
-//    }
 }

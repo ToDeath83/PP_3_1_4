@@ -124,6 +124,5 @@ on(document, 'click', '#delete-user', e => {
     document.getElementById('surname3').value = userDelete.children[2].innerHTML
     document.getElementById('age3').value = userDelete.children[3].innerHTML
     document.getElementById('username3').value = userDelete.children[4].innerHTML
-    // document.getElementById('roles3').value = userDelete.children[5].innerHTML
     $("#modalDelete").modal("show")
 })

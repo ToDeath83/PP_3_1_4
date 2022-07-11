@@ -5,9 +5,10 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.kata.spring.boot_security.demo.Dao.UserDao;
+import ru.kata.spring.boot_security.demo.dao.UserDao;
 import ru.kata.spring.boot_security.demo.models.Role;
 import ru.kata.spring.boot_security.demo.models.User;
 
@@ -22,9 +23,12 @@ public class UserServiceImp implements UserService{
 
     private final UserDao userDao;
 
+    private final PasswordEncoder passwordEncoder;
+
     @Autowired
-    public UserServiceImp(UserDao userDao) {
+    public UserServiceImp(UserDao userDao, PasswordEncoder passwordEncoder) {
         this.userDao = userDao;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -34,6 +38,7 @@ public class UserServiceImp implements UserService{
 
     @Override
     public void saveUser(User user, long[] listRoles) {
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         userDao.saveUser(user, listRoles);
     }
 

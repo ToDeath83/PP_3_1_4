@@ -11,6 +11,6 @@ fetch(urlUser)
                                 <td>${data.surname}</td>
                                 <td>${data.age}</td>
                                 <td>${data.username}</td>
-                                <td>${data.roles.map(role => role.name === 'USER' ? 'USER' : 'ADMIN')}</td>
+                                <td>${data.roles.map(role => role.name === 'USER' ? ' USER' : ' ADMIN')}</td>
                                 `;
     })

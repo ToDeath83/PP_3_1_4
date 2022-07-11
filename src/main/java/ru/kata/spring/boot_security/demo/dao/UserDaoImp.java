@@ -1,8 +1,9 @@
-package ru.kata.spring.boot_security.demo.Dao;
+package ru.kata.spring.boot_security.demo.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import ru.kata.spring.boot_security.demo.Repository.RoleRepository;
-import ru.kata.spring.boot_security.demo.Repository.UserRepository;
+import ru.kata.spring.boot_security.demo.repository.RoleRepository;
+import ru.kata.spring.boot_security.demo.repository.UserRepository;
 import ru.kata.spring.boot_security.demo.models.Role;
 import ru.kata.spring.boot_security.demo.models.User;
 
@@ -15,6 +16,7 @@ public class UserDaoImp implements UserDao {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
 
+    @Autowired
     public UserDaoImp(RoleRepository roleRepository, UserRepository userRepository) {
         this.roleRepository = roleRepository;
         this.userRepository = userRepository;
@@ -52,4 +54,5 @@ public class UserDaoImp implements UserDao {
     public List<Role> listRoles() {
         return roleRepository.findAll();
     }
+
 }

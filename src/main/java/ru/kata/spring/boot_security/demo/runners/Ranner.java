@@ -1,9 +1,9 @@
-package ru.kata.spring.boot_security.demo.Runners;
+package ru.kata.spring.boot_security.demo.runners;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
-import ru.kata.spring.boot_security.demo.Repository.UserRepository;
+import ru.kata.spring.boot_security.demo.repository.UserRepository;
 import ru.kata.spring.boot_security.demo.models.Role;
 import ru.kata.spring.boot_security.demo.models.User;
 
